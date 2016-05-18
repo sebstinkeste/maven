@@ -13,7 +13,7 @@ RUN wget http://apache.mindstudios.com/maven/maven-3/3.3.9/binaries/${MAVEN_VERS
     cp -r bin conf lib boot /usr/local/
 
 COPY server.xml /usr/local/tomcat/conf/server.xml
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 750 /entrypoint.sh
