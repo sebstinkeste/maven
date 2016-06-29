@@ -15,11 +15,11 @@ RUN wget http://apache.mindstudios.com/maven/maven-3/3.3.9/binaries/${MAVEN_VERS
 COPY server.xml /usr/local/tomcat/conf/server.xml
 
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod 750 /entrypoint.sh
-
+# ADD entrypoint.sh /usr/local/entrypoint.sh
+# RUN chmod 750 /usr/local/entrypoint.sh
 EXPOSE 80
 
-ENTRYPOINT ["/entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
 
-CMD [ "/usr/local/tomcat/bin/catalina.sh", "run"]
+WORKDIR /usr/local/tomcat
+CMD [ "bin/catalina.sh", "run"]
